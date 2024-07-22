@@ -1,9 +1,9 @@
 ---
 interface Props {
-	time: string;
-	title: string;
-	body: string;
-	tags: string;
+  time: string;
+  title: string;
+  body: string;
+  tags: string;
 }
 
 const { time, title, body, tags } = Astro.props;
@@ -20,21 +20,25 @@ const { time, title, body, tags } = Astro.props;
 
   <div class="bg-white p-4 sm:p-6 dark:bg-gray-900">
     <time class="block text-xs text-gray-500 dark:text-gray-400">
-      { time }
+      {time}
     </time>
 
     <a href="#">
       <h3 class="mt-0.5 text-lg text-gray-900 dark:text-white">
-        { title }
+        {title}
       </h3>
     </a>
 
-    <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 dark:text-gray-400">
-      { body }
+    <p
+      class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 dark:text-gray-400"
+    >
+      {body}
     </p>
 
-		<span class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
-			{ tags }
-		</span>
+    <span
+      class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+    >
+      {tags}
+    </span>
   </div>
 </article>
