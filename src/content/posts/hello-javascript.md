@@ -1,8 +1,8 @@
 ---
+image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 title: "Hello Javascript"
 pubDate: "2024-06-22T00:00:00Z"
 description: "Hello this is my first recommendation"
-image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 tags: ['astro', 'javascript', 'python']
 ---
 

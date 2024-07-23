@@ -1,9 +1,15 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Header from "../components/Header.astro";
-const allPosts = await getCollection("posts");
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+import Header from "../../components/Header.astro";
+
+const posts = (await getCollection("posts")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+
+console.log(posts);
+
 ---
 
 <Layout title="Welcome to Astro.">
@@ -11,17 +17,13 @@ const allPosts = await getCollection("posts");
     <Header title="Muebles Concept" />
     <ul role="list" class="link-card-grid">
       {
-        allPosts.map((post) => {
-          const { data } = post;
-          const { title, pubDate, image, tags } = data || {}; // Manejar casos donde data puede ser undefined
-          return (
+        posts.map((post) => {
             <Card
-              image={image || "Imagen no encontrada"}
-              title={title || "Untitled"}
-              time={pubDate || "Unknown date"}
-              tags={tags || []}
+              image= { post.data.image }
+              title= { post.data.title }
+              time= { post.data.pubDate }
+              tags= { post.data.tags }
             />
-          );
         })
       }
     </ul>
