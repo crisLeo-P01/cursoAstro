@@ -3,23 +3,28 @@ interface Props {
   image: string;
   title: string;
   time: string;
+  description: string;
   tags: string[];
+  slug: string;
 }
 
-const { image, title, time, tags } = Astro.props;
+const { image, title, time, description, tags, slug } = Astro.props;
 ---
 
 <article
   class="overflow-hidden rounded-lg shadow transition hover:shadow-lg dark:shadow-gray-700/25"
 >
   <div class="bg-white dark:bg-gray-900">
-    <img src={ image } alt="" />
+    <img src={ image } alt="">
     <div class="p-4">
-      <h2 class="mt-0.5 text-lg text-gray-900 dark:text-white">{ title }</h2>
+      <a href={ `/post/${slug}` }>
+        <h2 class="mt-0.5 text-lg text-gray-900 dark:text-white">{ title }</h2>
+      </a>
       <time
         class="block text-xs text-gray-500 dark:text-gray-400"
         datetime={ time }>{new Date(time).toLocaleDateString()}</time
       >
+      <p>{description}</p>
       <ul class="flex flex-wrap gap-2 mt-4">
         {
           tags.map((tag) => (
