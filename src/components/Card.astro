@@ -12,12 +12,12 @@ const { image, title, time, description, tags, slug } = Astro.props;
 ---
 
 <article
-  class="overflow-hidden rounded-lg shadow transition hover:shadow-lg dark:shadow-gray-700/25"
+  class="overflow-hidden rounded-lg shadow transition hover:shadow-lg bg-gray-700"
 >
-  <div class="bg-white dark:bg-gray-900">
+  <div class="bg-gray-700">
     <img src={ image } alt="">
     <div class="p-4">
-      <a href={ `/post/${slug}` }>
+      <a href={`/posts/${[slug]} `}>
         <h2 class="mt-0.5 text-lg text-gray-900 dark:text-white">{ title }</h2>
       </a>
       <time
@@ -28,7 +28,7 @@ const { image, title, time, description, tags, slug } = Astro.props;
       <ul class="flex flex-wrap gap-2 mt-4">
         {
           tags.map((tag) => (
-            <li class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600">
+            <li class="whitespace-nowrap rounded-full bg-purple-200 px-2.5 py-0.5 text-xs text-purple-600">
               { tag }
             </li>
           ))

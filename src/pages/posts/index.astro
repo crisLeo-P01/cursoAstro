@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
 import Header from "../../components/Header.astro";
 import { getCollection } from "astro:content";
+import Footer from "../../components/Footer.astro";
 
 const posts = (await getCollection("posts")).sort(
   (a, b) => new Date(a.data.pubDate).valueOf() - new Date(b.data.pubDate).valueOf()
@@ -26,6 +27,7 @@ const posts = (await getCollection("posts")).sort(
         ))
       }
     </ul>
+    <Footer />
   </main>
 </Layout>
 
