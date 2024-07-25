@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import Header from "../../components/Header.astro";
+import Base from "../../layouts/Base.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+<Base title="HOLA FUCK">
+  <Header title="AstroBuild" />
+  <Content />
+  <Footer />
+</Base>
