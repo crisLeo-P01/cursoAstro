@@ -1,18 +1,10 @@
 ---
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
+import BaseHead from '../components/BaseHead.astro';
 ---
 
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-  </head>
+<html lang="es">
+  <BaseHead title="Muebles devs" description="My first Page"/>
   <body class="h-screen">
     <slot />
   </body>
