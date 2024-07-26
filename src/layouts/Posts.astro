@@ -1,9 +1,11 @@
 ---
+import { fechaPost } from "../utils/fechaPost";
 import Layout from "./Layout.astro";
 
 const {
   content: { title, pubDate, image, tags },
 } = Astro.props;
+
 ---
 <Layout title="Post al día">
   
@@ -16,7 +18,7 @@ const {
         <span
           class="flex flex-col sm:gap-y-2 md:flex-row md:items-center md:gap-y-0 md:divide-x md:divide-textColor mt-4"
         >
-          <time class="pr-2 text-white">{pubDate}</time>
+          <time class="pr-2 text-white">{fechaPost(pubDate)}</time>
           <ul class="flex flex-wrap gap-2">
             {
               tags.map((tag: unknown) => (
