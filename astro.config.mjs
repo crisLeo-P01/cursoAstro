@@ -6,6 +6,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "htts://mueblesConcept.dev",
+  site: "https://mueblesConcept.dev",
   integrations: [tailwind(), mdx(), react(), sitemap()]
 });
