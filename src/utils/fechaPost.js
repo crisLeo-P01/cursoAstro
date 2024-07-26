@@ -1,11 +1,9 @@
 export const fechaPost = (date) => {
   const event = new Date(date);
+  const options = { month: 'long', day: 'numeric', timeZone: 'UTC' };
 
-  const localDate = new Date(event.getTime() - event.getTimezoneOffset() * 60000);
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-
-  // Formatea la fecha en español
-  const formattedDate = new Intl.DateTimeFormat('es-ES', options).format(localDate).slice(0, -8);
+  // Formatea la fecha en español y ajusta a la zona horaria local
+  const formattedDate = event.toLocaleDateString('es-ES', options);
 
   return formattedDate;
 };
