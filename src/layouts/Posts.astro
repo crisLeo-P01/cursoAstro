@@ -5,10 +5,9 @@ import Layout from "./Layout.astro";
 const {
   content: { title, pubDate, image, tags },
 } = Astro.props;
-
 ---
+
 <Layout title="Post al día">
-  
   <section class="dark:bg-gray-900">
     <div class="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 sm:py-4 lg:px-8">
       <div class="max-w-3xl">
@@ -30,16 +29,12 @@ const {
           </ul>
         </span>
       </div>
-  
+
       <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
         <div class="relative h-64 overflow-hidden sm:h-80 lg:h-full">
-          <img
-            alt={title}
-            src={image}
-            class="absolute inset-0 h-full w-full object-cover"
-          />
+          <img alt={title} src={image} class="absolute inset-0 h-full w-full object-cover" />
         </div>
-  
+
         <div class="lg:py-16">
           <article class="space-y-4 text-gray-600">
             <slot />
