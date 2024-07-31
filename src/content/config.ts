@@ -10,6 +10,14 @@ const postCollection = defineCollection({
   }),
 });
 
+const blogCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  })
+})
+
 export const collections = {
   'posts': postCollection,
+  'blogs': blogCollection,
 };

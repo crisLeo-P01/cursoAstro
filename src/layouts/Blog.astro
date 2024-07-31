@@ -1,0 +1,15 @@
+---
+import Layout from "./Layout.astro";
+
+const {
+  content: { title, description }
+} = Astro.props;
+---
+
+<Layout title="blog del dia">
+<h2>{title}</h2>
+<p>{description}</p>
+<article>
+  <slot />
+</article>
+</Layout>

@@ -16,6 +16,7 @@ export async function getStaticPaths() {
 const post = Astro.props;
 const { Content } = await post.render();
 ---
+
 <Base title="HOLA FUCK">
   <HeaderTop client:load />
   <Header title="AstroBuild" />
