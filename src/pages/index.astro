@@ -4,6 +4,7 @@ import HeaderTop from "../components/HeaderTop";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import NewCard from "../components/NewCard.astro";
+import { getCollection } from "astro:content";
 
 interface Props {
   slug: string,
@@ -11,8 +12,10 @@ interface Props {
 
 const { slug } = Astro.props;
 
+const blogs = await getCollection("blogs");
+
 // const posts = await Astro.glob("../content/posts/*.md");
-const blogs = await Astro.glob("../content/blogs/*.md")
+// const blogs = await Astro.glob("../content/blogs/*.md")
 ---
 
 <Layout title="Welcome to Astro.">
@@ -23,10 +26,10 @@ const blogs = await Astro.glob("../content/blogs/*.md")
     <ul role="list" class="link-card-grid">
       {
         blogs.map((blog) => (
-          <NewCard 
-            title={blog.frontmatter.title}
-            description={blog.frontmatter.description}
-            slug={blog.frontmatter.slug}
+          <NewCard
+            title={blog.data.title}
+            description={blog.data.description}
+            slug={blog.slug}
           />
         ))
       }
