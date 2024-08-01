@@ -5,7 +5,7 @@ import Base from "../../layouts/Base.astro";
 import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
-  const blogs = await getCollection("blogs")
+  const blogs = await getCollection("blogs");
   return blogs.map((blog) => ({
     params: { slug: blog.slug },
     props: blog,
@@ -20,4 +20,5 @@ const { Content } = await blog.render();
   <Header title="fuuuuuck" />
   <Content />
   <Footer />
-<Base/>
+  <Base />
+</Base>

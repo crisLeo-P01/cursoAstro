@@ -7,7 +7,7 @@ import NewCard from "../components/NewCard.astro";
 import { getCollection } from "astro:content";
 
 interface Props {
-  slug: string,
+  slug: string;
 }
 
 const { slug } = Astro.props;
@@ -26,18 +26,13 @@ const blogs = await getCollection("blogs");
     <ul role="list" class="link-card-grid">
       {
         blogs.map((blog) => (
-          <NewCard
-            title={blog.data.title}
-            description={blog.data.description}
-            slug={blog.slug}
-          />
+          <NewCard title={blog.data.title} description={blog.data.description} slug={blog.slug} />
         ))
       }
     </ul>
   </main>
   <Footer />
 </Layout>
-
 
 <style>
   main {
