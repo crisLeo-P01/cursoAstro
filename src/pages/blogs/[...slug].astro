@@ -16,7 +16,7 @@ const blog = Astro.props;
 const { Content } = await blog.render();
 ---
 
-<Base title="hola" description="tata">
+<Base title={blog.data.title} description={blog.data.description}>
   <Header title="fuuuuuck" />
   <Content />
   <Footer />

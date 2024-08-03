@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import Header from "../../components/Header.astro";
-import HeaderTop from "../../components/HeaderTop";
 import Base from "../../layouts/Base.astro";
+// import Header from "../../components/Header.astro";
+import HeaderTop from "../../components/HeaderTop";
 import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
@@ -17,9 +17,9 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Base title="HOLA FUCK" description="fafa">
+<Base title={post.data.title} description={post.data.description}>
   <HeaderTop client:load />
-  <Header title="AstroBuild" />
+  <!-- <Header title={post.data.title} /> -->
   <Content />
   <Footer />
 </Base>
