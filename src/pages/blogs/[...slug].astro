@@ -17,7 +17,7 @@ const { Content } = await blog.render();
 ---
 
 <Base title={blog.data.title} description={blog.data.description}>
-  <Header title="fuuuuuck" />
+  <Header title={blog.data.title} />
   <Content />
   <Footer />
 </Base>
